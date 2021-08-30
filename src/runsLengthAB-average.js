@@ -5,23 +5,17 @@ const isRunLengthLessThanFive = (array) => {
   return array.some((n) => n < 5);
 };
 
-const n = 30; // tamaño de la muestra
-const a = 0.05; // nivel de significancia
+const sample = require('./sample/sample');
+// const sample = [...Array(n).map(() => Math.random())];
 
-const sample = [
-  0.1998, 0.945, 0.8811, 0.2639, 0.2522, 0.6555, 0.5317, 0.8529, 0.3486, 0.732,
-  0.5175, 0.881, 0.5917, 0.1287, 0.6151, 0.9163, 0.3616, 0.1334, 0.8237, 0.9881,
-  0.3897, 0.5062, 0.7266, 0.7804, 0.7038, 0.9245, 0.0663, 0.1294, 0.5792,
-  0.4948,
-];
+const n = sample.length; // tamaño de la muestra
+const a = 0.05; // nivel de significancia
 
 // creo la secuencia +-+-+++...
 const runsSequence = Array(n);
 for (let index = 0; index < n; index++) {
   runsSequence[index] = sample[index] < 0.5 ? 0 : 1;
 }
-
-console.log(runsSequence);
 
 const runsList = [];
 let tmpList = [];
@@ -68,8 +62,6 @@ for (let index = 0; index < Math.max(...runsIntervals); index++) {
   const i = index + 1;
   expectedRunsLength[index] = 2 * n * Math.pow(n1 / n, i) * Math.pow(n2 / n, 2);
 }
-
-console.log(expectedRunsLength);
 
 // mientras la longitud de racha en los ultimos intervalos sea menor a 5 sumo los últimos valores
 while (isRunLengthLessThanFive(expectedRunsLength)) {

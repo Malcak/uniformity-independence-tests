@@ -1,21 +1,20 @@
 {
-  "name": "simulations",
+  "name": "uniformity-independency-tests",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "uniformity and independency tests",
+  "main": "./src/index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "chi-squared": "node ./src/chi-squared.js",
+    "chiSquare": "node ./src/chi-squared.js",
     "smirnov": "node ./src/smirnov.js",
-    "smirnov-ng": "node ./src/smirnov-nogroup.js",
+    "smirnovNG": "node ./src/smirnov-nogroup.js",
     "runsAB": "node ./src/runsAB-average.js",
     "runsUD": "node ./src/runsUD.js",
     "runsLenAB": "node ./src/runsLengthAB-average.js",
     "runsLenUD": "node ./src/runsLengthUD.js",
-    "rng": "node ./src/rng/congMixto.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "rng": "node ./src/rng/congMixto.js"
   },
-  "author": "",
+  "author": "Malcak",
   "license": "ISC",
   "dependencies": {
     "chi-sq-test": "^1.1.0",

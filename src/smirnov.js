@@ -1,15 +1,15 @@
 const groupBy = require('lodash.groupby');
 
-const n = 100;
+const sample = require('./sample/sample');
+// const sample = [...Array(n).map(() => Math.random())];
+
+const n = sample.length;
 const k = 10;
 const ei = 10;
 const a = 0.01;
 
 const expected = Array(k).fill(ei);
 const observed = Array(k).fill(0);
-
-const sample = [...Array(n).map(() => Math.random())];
-// const sample = [];
 
 const grouper = (value) => {
   for (let index = 1; index < k; index++) {

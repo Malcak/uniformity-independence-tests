@@ -1,0 +1,24 @@
+{
+  "name": "simulations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "chi-squared": "node ./src/chi-squared.js",
+    "smirnov": "node ./src/smirnov.js",
+    "smirnov-ng": "node ./src/smirnov-nogroup.js",
+    "runsAB": "node ./src/runsAB-average.js",
+    "runsUD": "node ./src/runsUD.js",
+    "runsLenAB": "node ./src/runsLengthAB-average.js",
+    "runsLenUD": "node ./src/runsLengthUD.js",
+    "rng": "node ./src/rng/congMixto.js",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chi-sq-test": "^1.1.0",
+    "lodash.groupby": "^4.6.0"
+  }
+}
